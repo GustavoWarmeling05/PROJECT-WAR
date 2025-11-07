@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}
+
+canvas {
+  background: url("c.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ===== HUD ===== */
+#hud {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+#vidaContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#vidaText {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#vidaBar {
+  width: 200px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#vidaFill {
+  height: 100%;
+  background: white;
+  width: 100%;
+  border-radius: 15px;
+  transition: width 0.3s;
+}
+
+/* ===== Pontos ===== */
+#pontos {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 15px;
+  z-index: 5;
+}
+
+/* ===== Timer ===== */
+#timer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 15px;
+  z-index: 5;
+}
+
+/* ===== Game Over ===== */
+#gameOver {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+
+  /* fundo com blur bonito */
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+#gameOver p {
+  font-size: 2.3em;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Botão estiloso */
+#restartBtn {
+  margin-top: 10px;
+  padding: 12px 40px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+#restartBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.636);
+}
+
+
+/* ===== Tiro do jogador ===== */
+.bullet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+}
