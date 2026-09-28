@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceWar - Jogo</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+
+    <!-- Fundo com estrelas -->
+    <div class="container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <!-- Canvas do jogo -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD (Interface) -->
+    <div class="hud">
+        <div class="hud-item">
+            <span class="label">TEMPO:</span>
+            <span id="timer" class="value">0:00</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">PONTOS:</span>
+            <span id="score" class="value">0</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">VIDAS:</span>
+            <span id="lives" class="value">❤️❤️❤️</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">NÍVEL:</span>
+            <span id="level" class="value">1</span>
+        </div>
+    </div>
+
+    <!-- Tela de pausa -->
+    <div id="pauseScreen" class="pause-screen hidden">
+        <div class="pause-content">
+            <h1>JOGO PAUSADO</h1>
+            <p>Pressione ESC para continuar</p>
+        </div>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div id="gameOverScreen" class="game-over-screen hidden">
+        <div class="game-over-content">
+            <h1>GAME OVER</h1>
+            <div class="game-over-stats">
+                <p>Tempo de Sobrevivência: <span id="finalTime">0:00</span></p>
+                <p>Pontuação Final: <span id="finalScore">0</span></p>
+                <p>Nível Alcançado: <span id="finalLevel">1</span></p>
+            </div>
+            <button id="restartBtn">JOGAR NOVAMENTE</button>
+        </div>
+    </div>
+
+    <script src="GAME.JS"></script>
+</body>
+</html>
